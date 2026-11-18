@@ -1,0 +1,66 @@
+svg[data-swinline-color-filter] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@media not (forced-colors: active) {
+  :root[data-swinline-orange],
+  :root[data-swinline-orange] :is(:modal, :popover-open, :fullscreen),
+  :root[data-swinline-orange] :is(:modal, :popover-open, :fullscreen)::backdrop {
+    filter: url("#swinline-orange-to-pink") !important;
+  }
+
+  :root[data-swinline-orange] :is(
+    [data-swinline-grade="decor"],
+    [data-swinline-grade="heading"]:has(img),
+    [data-swinline-intro-stage]:not(:has(main, #nominations)),
+    [data-swinline-css-arrow],
+    img[src*="/slider-arrow-" i], img[srcset*="/slider-arrow-" i],
+    .swiper-button-prev, .swiper-button-next, [class*="slider-arrow-" i],
+    [class*="slider__arrow" i], [class*="carousel__arrow" i]
+  ),
+  :root[data-swinline-orange] .button-gem:not(.button-gem--stone)::before,
+  :root[data-swinline-orange] :is(
+    .button-gem__fx,
+    .golden-ticket__status .button-gem__text,
+    :is(.legends__arrow, .nominations__arrow, .winners__arrow) video,
+    .ticket-widget img,
+    img[src*="/_astro/star." i]
+  ) {
+    filter: url("#swinline-crystal-to-rose") !important;
+  }
+
+  :root[data-swinline-orange] [data-swinline-grade="glow"] {
+    filter: url("#swinline-glow-to-rose") !important;
+  }
+
+  :root[data-swinline-orange] .button-gem:not(.button-gem--stone, .golden-ticket__status) .button-gem__text {
+    text-shadow: 0 1px 2px #210718, 0 0 7px #210718;
+  }
+
+  :root[data-swinline-orange] [data-swinline-grade="heading"],
+  :root[data-swinline-orange] [data-swinline-grade="heading"] :where(span, div, p, b, strong, em) {
+    background-image: linear-gradient(180deg, #ffdaea, #ff9fbe) !important;
+    background-color: transparent !important;
+    background-clip: text !important;
+    color: #ffb8d0 !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke-color: transparent !important;
+    text-shadow: none !important;
+    transition-property: opacity, visibility, transform, translate, scale, rotate !important;
+  }
+
+  :root[data-swinline-orange] [data-swinline-grade="heading"]::before,
+  :root[data-swinline-orange] [data-swinline-grade="heading"]::after,
+  :root[data-swinline-orange] [data-swinline-grade="heading"] :where(span, div, p, b, strong, em)::before,
+  :root[data-swinline-orange] [data-swinline-grade="heading"] :where(span, div, p, b, strong, em)::after {
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+    -webkit-text-stroke-color: transparent !important;
+    text-shadow: none !important;
+    transition-property: opacity, visibility, transform, translate, scale, rotate !important;
+  }
+}

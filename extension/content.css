@@ -1,0 +1,22 @@
+img[data-swinline-image] {
+  content: var(--swinline-replacement) !important;
+}
+
+img[data-swinline-image="swinline-intro.png"] {
+  scale: 1.35;
+}
+
+img[data-swinline-image="swinline-logo.svg"],
+img[data-swinline-standin="swinline-logo.svg"] {
+  aspect-ratio: 349 / 82;
+  object-fit: cover;
+  object-position: center;
+}
+
+a[data-swinline-ad] {
+  display: none !important;
+}
+
+img[data-swinline-standin] {
+  max-width: 100%;
+}
